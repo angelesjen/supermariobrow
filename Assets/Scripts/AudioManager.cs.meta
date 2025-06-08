@@ -3,7 +3,21 @@ guid: 93de574cffa79c342ac03300cbddda5d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - musicSource: {instanceID: 0}
+  - SFXSource: {instanceID: 0}
+  - backgroundMenu: {fileID: 8300000, guid: ece7c573974d59742b3920d9b26f29c0, type: 3}
+  - backgroundGame: {fileID: 8300000, guid: 270790a9ceec654428593c0cbb78641f, type: 3}
+  - win: {fileID: 8300000, guid: b3541f7eba0811a42a07af87dda5ffc9, type: 3}
+  - die: {fileID: 8300000, guid: 0089b83abd3d77748bb98968d9d96f23, type: 3}
+  - lost: {fileID: 8300000, guid: 7d6a5dbb5b52e2244bedfd7558160876, type: 3}
+  - coin: {fileID: 8300000, guid: 839ed4974ac13734a93e650cf103c11c, type: 3}
+  - jump: {fileID: 8300000, guid: 51c98e6a033f4814299101bdd387a240, type: 3}
+  - stomp: {fileID: 8300000, guid: b5f555cbe9cf66d4eabf8bef3d15d7ac, type: 3}
+  - flag: {fileID: 8300000, guid: caef2dff329a4ca44aa925cc31ec1be4, type: 3}
+  - pipe: {fileID: 8300000, guid: 1eaf700cb3b880a44b125987ee99a731, type: 3}
+  - dash: {fileID: 8300000, guid: d7f21f9519882d74f9c4940e27abf05e, type: 3}
+  - ending: {fileID: 8300000, guid: 1ff2f4c094f29434fb713eb790d38d39, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

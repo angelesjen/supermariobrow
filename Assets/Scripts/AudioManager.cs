@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [Header("---------- Audio Clip ----------")]
     public AudioClip backgroundMenu;
     public AudioClip backgroundGame;
+    public AudioClip backgroundOver;
     public AudioClip win;
     public AudioClip die;
     public AudioClip lost;
@@ -16,15 +18,21 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip stomp;
     public AudioClip flag;
+    public AudioClip pipe;
+    public AudioClip dash;
+    public AudioClip ending;
+
+    public static AudioManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (FindObjectsOfType<AudioManager>().Length > 1)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
 
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -37,8 +45,22 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float pitchVariation = 0f)
     {
+        if (pitchVariation > 0)
+        {
+            SFXSource.pitch = 1f + Random.Range(-pitchVariation, pitchVariation);
+        }
+        else
+        {
+            SFXSource.pitch = 1f;
+        }
         SFXSource.PlayOneShot(clip);
+    }
+
+    public void RestartMusic()
+    {
+        musicSource.Stop();
+        musicSource.Play();
     }
 }

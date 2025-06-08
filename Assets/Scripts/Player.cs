@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    AudioManager audioManager;
     public PlayerSpriteRenderer smallRenderer;
     public PlayerSpriteRenderer bigRenderer;
     private DeathAnimation DeadAnim;
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         DeadAnim = GetComponent<DeathAnimation>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
     public void Hit()
     {
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.die);
                 Die();
             }
         }
@@ -38,6 +42,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        audioManager.PlaySFX(audioManager.die);
         smallRenderer.enabled = false;
         bigRenderer.enabled = false;
         DeadAnim.enabled = true;

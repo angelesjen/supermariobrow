@@ -6,14 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
 
-    AudioManager AudioManager;
-    [SerializeField] private Texture2D cursorTexture;
-    [SerializeField] private Vector2 hotSpot;
-
-    private void Awake()
-    {
-        AudioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+    //[SerializeField] private Texture2D cursorTexture;
+    //[SerializeField] private Vector2 hotSpot;
 
     public void Restart()
     {
@@ -38,7 +32,14 @@ public class GameOver : MonoBehaviour
 
     public void Start()
     {
-        AudioManager.PlayMusic(AudioManager.backgroundMenu);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.backgroundOver);
+        }
+        else
+        {
+            Debug.LogError("AudioManager instance not found!");
+        }
         //Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
     }
 }

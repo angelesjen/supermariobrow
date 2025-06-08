@@ -906,8 +906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1709456591}
   SFXSource: {fileID: 1852475662}
-  backgroundMenu: {fileID: 8300000, guid: eb1275058cac25848876c12ceff6e997, type: 3}
+  backgroundMenu: {fileID: 8300000, guid: 270790a9ceec654428593c0cbb78641f, type: 3}
   backgroundGame: {fileID: 8300000, guid: 275d9a2fe2ac11448ba343a61e9dd1e2, type: 3}
+  backgroundOver: {fileID: 8300000, guid: ece7c573974d59742b3920d9b26f29c0, type: 3}
   win: {fileID: 8300000, guid: b3541f7eba0811a42a07af87dda5ffc9, type: 3}
   die: {fileID: 8300000, guid: 0089b83abd3d77748bb98968d9d96f23, type: 3}
   lost: {fileID: 8300000, guid: 7d6a5dbb5b52e2244bedfd7558160876, type: 3}
@@ -915,6 +916,9 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 51c98e6a033f4814299101bdd387a240, type: 3}
   stomp: {fileID: 8300000, guid: b5f555cbe9cf66d4eabf8bef3d15d7ac, type: 3}
   flag: {fileID: 8300000, guid: caef2dff329a4ca44aa925cc31ec1be4, type: 3}
+  pipe: {fileID: 8300000, guid: 1eaf700cb3b880a44b125987ee99a731, type: 3}
+  dash: {fileID: 8300000, guid: d7f21f9519882d74f9c4940e27abf05e, type: 3}
+  ending: {fileID: 8300000, guid: 1ff2f4c094f29434fb713eb790d38d39, type: 3}
 --- !u!4 &1448429651
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,8 +1309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70b257e86a381547893ec7877d4a998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 6eec4be6285475a4bb4d1f4634e7fd3f, type: 3}
-  hotSpot: {x: 0, y: 0}
 --- !u!1 &1709456590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1338,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.55
   m_Pitch: 1
   Loop: 1
   Mute: 0

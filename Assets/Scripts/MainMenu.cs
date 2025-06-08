@@ -6,14 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    AudioManager AudioManager;
-    [SerializeField] private Texture2D cursorTexture;
-    [SerializeField] private Vector2 hotSpot;
-
-    private void Awake()
-    {
-        AudioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+    //[SerializeField] private Texture2D cursorTexture;
+    //[SerializeField] private Vector2 hotSpot;
 
     public void PlayGame()
     {
@@ -34,7 +28,14 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        AudioManager.PlayMusic(AudioManager.backgroundMenu);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.backgroundMenu);
+        }
+        else
+        {
+            Debug.LogError("AudioManager instance not found!");
+        }
         //Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
     }
 }
