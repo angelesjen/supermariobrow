@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,6 @@ public class CornTrackerUI : MonoBehaviour
     private void OnEnable()
     {
         ResetTrackerUI();
-
         if (CornTracker.Instance != null)
         {
             CornTracker.Instance.OnCornCollected.AddListener(UpdateCornUI);

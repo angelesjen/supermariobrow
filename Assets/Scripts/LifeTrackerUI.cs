@@ -13,6 +13,17 @@ public class LifeTrackerUI : MonoBehaviour
         if (GameManager.Instance != null)
         {
             Initialize();
+            for (int i = 0; i < lifeIcons.Length; i++)
+            {
+                if (i >= GameManager.Instance.lives && lifeIcons[i].enabled)
+                {
+                    lifeIcons[i].enabled = false;
+                }
+                else
+                {
+                    lifeIcons[i].enabled = true;
+                }
+            }
         }
         else
         {

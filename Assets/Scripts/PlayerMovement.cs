@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimeLeft;
     private float dashCooldownLeft;
     private bool isDashing = false;
+    public bool isDown = false;
 
     AudioManager AudioManager;
 
@@ -177,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator WalkIntoCastle()
     {
+        isDown = true;
         Animator anim = GetComponent<Animator>();
         AudioManager AudioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 

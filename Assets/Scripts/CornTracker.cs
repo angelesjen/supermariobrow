@@ -28,13 +28,13 @@ public class CornTracker : MonoBehaviour
     {
         if (!collectedCorns.Contains(id))
         {
-            collectedCorns.Add(id);
             Debug.Log($"Corn collected! Total: {collectedCorns.Count}");
+            collectedCorns.Add(id);
             int count = collectedCorns.Count;
 
             
-            OnCornCollected.Invoke(collectedCorns.Count);
-
+            //OnCornCollected.Invoke(collectedCorns.Count);
+            FindObjectOfType<CornTrackerUI>().UpdateCornUI(count);
 
             if (count >= totalCorns)
             {

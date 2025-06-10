@@ -12,7 +12,8 @@ public class GameOver : MonoBehaviour
     public void Restart()
     {
         //StartCoroutine(LoadSceneWithDelay());
-        SceneManager.LoadSceneAsync("1-1");
+        GameManager.Instance.resetLevelAfterOver();
+        //SceneManager.LoadSceneAsync("1-1");
     }
 
     /*private IEnumerator LoadSceneWithDelay()

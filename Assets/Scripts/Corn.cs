@@ -20,7 +20,7 @@ public class Corn : MonoBehaviour
 
     private void Collect()
     {
-
+        Debug.Log("collected");
         AudioManager.PlaySFX(AudioManager.coin, 0.1f);
         CornTracker.Instance.CollectCorn(cornID);
         Destroy(gameObject);

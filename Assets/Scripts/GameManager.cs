@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private bool gameStarted = false;
+    public bool gameStarted = false;
 
     public event System.Action<int> OnLivesChanged;
 
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
         LoadLevel(1,1);
 
-        AudioManager.PlayMusic(AudioManager.backgroundGame);
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.backgroundGame);
 
     }
 
@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
         if (lives > 0)
         {
             StartCoroutine(ResetLevelWithTimer());
+            CornTracker.Instance.ResetTracker();
         }
         else
         {
@@ -111,6 +112,11 @@ public class GameManager : MonoBehaviour
 
     public void ResetLevel()
     {
+        ResetLevel(0f);
+    }
+    public void resetLevelAfterOver()
+    {
+        lives = 4;
         ResetLevel(0f);
     }
 
